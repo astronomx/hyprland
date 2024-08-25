@@ -4,4 +4,6 @@
 
 # Hyprland
 
-Welcome to my Hyprland dotfiles repository! This repo contains my personal configuration files for Hyprland, I customized the user experience to my wishes and demands. Feel free to explore, fork, and use these dotfiles for your own setup.
+Welcome to my Hyprland dotfiles repository! This repo contains my personal configuration files for Hyprland, I customized the user experience to my wishes and demands. Feel free to explore, fork, and use these dotfiles for your own setup
+
+Current theme: https://www.pling.com/p/1944780/
