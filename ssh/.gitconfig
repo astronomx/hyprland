@@ -1,0 +1,4 @@
+# Place into folder which uses a different ssh key than your primary
+[user]
+	name= your-name
+	email= your-email

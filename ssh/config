@@ -1,0 +1,10 @@
+Host github-personal
+	Hostname github.com
+	User git
+	IdentityFile ~/.ssh/id_ed25519
+
+Host gitlab
+	Hostname gitlab.fdmci.hva.nl
+	User git
+	IdentityFile ~/.ssh/id_ed25519_2
+
