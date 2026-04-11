@@ -33,8 +33,8 @@
     frame_width = 2
     frame_color = "#00f7ff"
 
-    corner_radius = 0
-    corners = all
+    corner_radius = 8
+    corners = bottom-right, bottom-left, top-left
 
     ### Text ###
     font = ProggyClean Nerd Font Mono 10
