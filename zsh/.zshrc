@@ -22,6 +22,16 @@ setopt SHARE_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 
+# Report cwd to tmux/kitty (needed for split-window -c "#{pane_current_path}")
+if [[ -n "$TMUX" ]]; then
+  __tmux_report_cwd() {
+    printf '\e]7;file://%s%s\e\\' "$HOST" "$PWD"
+  }
+  precmd_functions+=(__tmux_report_cwd)
+  chpwd_functions+=(__tmux_report_cwd)
+  __tmux_report_cwd
+fi
+
 # ============================================================================
 # Completion
 # ============================================================================
@@ -131,3 +141,14 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey '^[[A' up-line-or-beginning-search
 bindkey '^[[B' down-line-or-beginning-search
+
+# bun completions
+[ -s "/home/unknownuser/.bun/_bun" ] && source "/home/unknownuser/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+alias gnome-control-center='XDG_CURRENT_DESKTOP=GNOME gnome-control-center'
